@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="id1">Enter your Full-Name:</label><br><br>
+    <input type="Text" id="id1" ><br><br>
+    <label for="id2">Enter your Mobile Number:</label><br><br>
+    <input type="tel" id="id2"><br><br>
+    <button>login</button><br>
+    <script>
+        var a1=document.getElementsByTagName("input");
+         var itm1=JSON.parse(localStorage.getItem("name"));
+        
+        
+         var itm2=JSON.parse(localStorage.getItem("mobile"));
+         
+        var btn=document.getElementsByTagName("button");
+        btn[0].addEventListener("click",(e)=>{
+            e.preventDefault();
+            
+         var mtch1=a1[0].value;
+         var mtch2=a1[1].value;
+            
+          if(itm1==mtch1&&itm2==mtch2){
+            alert("thanks for logging in..webpage is in process")
+          }
+          else{
+            alert("please enter  valid details")
+          } 
+
+        })
+
+    </script>
+
+</body>
+</html>

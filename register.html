@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var label1=document.createElement("label");
+        label1.for="id1";
+        label1.innerText="FULL-NAME:";
+        var input1=document.createElement("input");
+        input1.id="id1";
+        input1.type="text";
+        var br1=document.createElement("br");
+        var br11=document.createElement("br");
+        var label2=document.createElement("label");
+        label2.for="id2";
+        label2.innerText="MOBILE Number:";
+        var input2=document.createElement("input");
+        input2.id="id2";
+        input2.type="tel";
+        var gt2=input2.value;
+        var br2=document.createElement("br");
+        var btn=document.createElement("button");
+        btn.style.marginLeft="500px";
+        btn.innerText="Register";
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            var gt1=input1.value;
+            var gt2=input2.value;
+          
+         
+            if(gt1.length>=10&&gt1.length<=20&&gt2.length==10){
+             window.localStorage.setItem("name",JSON.stringify(gt1));
+             window.localStorage.setItem("mobile",JSON.stringify(gt2));
+              var text=confirm("Do you want to login to access the data?");
+              if(text){
+                window.open("login.html");
+              }
+              else{
+                window.location.assign("tnks.html");
+              }
+            }
+            else{
+                alert("your credentails are invalid");
+            }
+            
+
+        })
+        document.body.append(label1,input1,br1,br11,label2,input2,br2,btn);
+        
+        
+    </script>
+</body>
+</html>
